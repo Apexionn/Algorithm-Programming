@@ -3,39 +3,35 @@
 int main() {
     int N, K;
     
-    // Input N and K
     scanf("%d %d", &N, &K);
 
-    // First Square: Completely filled with '#'
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
             printf("#");
         }
         printf("\n");
     }
-    printf("\n"); // Newline after the first square
+    printf("\n"); 
 
-    // Second Square: Every K-th row filled with '#', others with '.'
     for (int i = 0; i < N; i++) {
-        if ((i + 1) % K == 0) {  // If it's the K-th row
+        if ((i + 1) % K == 0) {  
             for (int j = 0; j < N; j++) {
                 printf("#");
             }
-        } else {  // Other rows are filled with '.'
+        } else {  
             for (int j = 0; j < N; j++) {
                 printf(".");
             }
         }
         printf("\n");
     }
-    printf("\n"); // Newline after the second square
+    printf("\n"); 
 
-    // Third Square: Every K-th column filled with '#', others with '.'
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            if ((j + 1) % K == 0) {  // If it's the K-th column
+            if ((j + 1) % K == 0) { 
                 printf("#");
-            } else {  // Other columns are filled with '.'
+            } else { 
                 printf(".");
             }
         }

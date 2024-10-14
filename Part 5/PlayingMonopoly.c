@@ -9,7 +9,6 @@ int main() {
         scanf("%d", &roll);
         position += roll; 
         
-        // Check for special squares
         if (position == 30) {
             position = 10; // Go to Jail
         } else if (position == 12) {

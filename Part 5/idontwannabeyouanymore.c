@@ -1,34 +1,29 @@
 #include <stdio.h>
-#include <ctype.h> // For checking characters with isalpha()
+#include <ctype.h>
 
 int main() {
-    int T; // Number of test cases
+    int T; 
     scanf("%d", &T);
     
-    // Consume the newline after T
     getchar();
 
     for (int t = 1; t <= T; t++) {
-        int N; // Length of the string
+        int N; 
         scanf("%d", &N);
         
-        // Consume the newline after N
         getchar();
 
-        char S[N + 1]; // Input string with length N
-        fgets(S, N + 1, stdin); // Read the input string
+        char S[N + 1];
+        fgets(S, N + 1, stdin); 
         
-        // Output the case number
         printf("Case #%d: ", t);
 
-        // Iterate through the string and print only the alphabet characters
         for (int i = 0; S[i] != '\0'; i++) {
             if (isalpha(S[i])) {
                 putchar(S[i]);
             }
         }
         
-        // Print a newline after each case
         printf("\n");
     }
     

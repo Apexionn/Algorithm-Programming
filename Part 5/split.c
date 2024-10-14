@@ -1,23 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int T; // Number of test cases
+    int T;
     scanf("%d", &T);
     
     for (int t = 1; t <= T; t++) {
-        int N; // Number of elements in the array
+        int N; 
         scanf("%d", &N);
         
         int arr[N];
         int total_sum = 0;
         
-        // Read the array and calculate the total sum
         for (int i = 0; i < N; i++) {
             scanf("%d", &arr[i]);
             total_sum += arr[i];
         }
         
-        // If total sum is odd, it is impossible to split the array
         if (total_sum % 2 != 0) {
             printf("Case #%d: No\n", t);
             continue;
@@ -30,12 +28,11 @@ int main() {
         for (int i = 0; i < N; i++) {
             left_sum += arr[i];
             if (left_sum == half_sum) {
-                possible = 1; // We found a valid split
+                possible = 1; 
                 break;
             }
         }
         
-        // Output the result for the current test case
         if (possible) {
             printf("Case #%d: Yes\n", t);
         } else {

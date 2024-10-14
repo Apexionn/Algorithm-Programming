@@ -8,7 +8,6 @@ int main() {
         N = N * 2 + 1;  
     }
 
-    // Cetak hasil akhir
     printf("%d\n", N);
 
     return 0;
