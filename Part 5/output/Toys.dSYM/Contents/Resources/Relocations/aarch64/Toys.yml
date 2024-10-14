@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Part 5/output/Toys'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _gcd, symObjAddr: 0x0, symBinAddr: 0x100003B0C, symSize: 0x5C }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _gcd, symObjAddr: 0x0, symBinAddr: 0x100003B0C, symSize: 0x5C }
+  - { offsetInCU: 0x93, offset: 0x93, size: 0x8, addend: 0x0, symName: _lcm, symObjAddr: 0x5C, symBinAddr: 0x100003B68, symSize: 0x44 }
+  - { offsetInCU: 0xC9, offset: 0xC9, size: 0x8, addend: 0x0, symName: _countMultiples, symObjAddr: 0xA0, symBinAddr: 0x100003BAC, symSize: 0x20 }
+  - { offsetInCU: 0xFF, offset: 0xFF, size: 0x8, addend: 0x0, symName: _countToysThrownAway, symObjAddr: 0xC0, symBinAddr: 0x100003BCC, symSize: 0x2A8 }
+  - { offsetInCU: 0x232, offset: 0x232, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x368, symBinAddr: 0x100003E74, symSize: 0xEC }
+...

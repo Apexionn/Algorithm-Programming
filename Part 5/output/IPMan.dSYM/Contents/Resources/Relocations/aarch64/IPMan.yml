@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Part 5/output/IPMan'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _isValidIPv10, symObjAddr: 0x0, symBinAddr: 0x100003CFC, symSize: 0x140 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _isValidIPv10, symObjAddr: 0x0, symBinAddr: 0x100003CFC, symSize: 0x140 }
+  - { offsetInCU: 0xAF, offset: 0xAF, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x140, symBinAddr: 0x100003E3C, symSize: 0x118 }
+...
