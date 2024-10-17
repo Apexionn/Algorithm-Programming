@@ -1,18 +1,30 @@
 #include <stdio.h>
 
-int main(){
-    int T;
+int main() {
+    int N;
+    scanf("%d", &N); 
 
-    scanf("%d", &T);
+    int A[N], B[N], result[N];
 
-    for (int i = 1; i <= T; i++)
-    {
-        int A, B;
-        scanf("%d\n", &A);
-        scanf("%d\n", &B);
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &A[i]);
     }
-    
 
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &B[i]);
+    }
+
+    for (int i = 0; i < N; i++) {
+        result[A[i]] = B[i]; 
+    }
+
+    for (int i = 0; i < N; i++) {
+        printf("%d", result[i]);
+        if (i < N - 1) {
+            printf(" ");
+        }
+    }
+    printf("\n");
 
     return 0;
 }
