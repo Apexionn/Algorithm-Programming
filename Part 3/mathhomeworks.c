@@ -7,7 +7,6 @@ int main() {
 
     long long result1, result2, result3;
 
-    // Membaca semua input secara terpisah
     scanf(" (%lld+%lld)x(%lld-%lld)", &A1, &B1, &C1, &D1);
     result1 = (A1 + B1) * (C1 - D1);
 
@@ -17,7 +16,6 @@ int main() {
     scanf(" (%lld+%lld)x(%lld-%lld)", &A3, &B3, &C3, &D3);
     result3 = (A3 + B3) * (C3 - D3);
 
-    // Mencetak semua hasil dalam satu baris
     printf("%lld %lld %lld\n", result1, result2, result3);
 
     return 0;

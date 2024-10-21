@@ -8,10 +8,8 @@ int main() {
     int age1;
     int age2;
 
-    // Read input
     scanf("%s %lf %d %s %lf %d", name1, &height1, &age1, name2, &height2, &age2);
 
-    // Print output
     printf("Name 1: %s\n", name1);
     printf("Height 1: %.2lf\n", height1);
     printf("Age 1: %d\n", age1);
