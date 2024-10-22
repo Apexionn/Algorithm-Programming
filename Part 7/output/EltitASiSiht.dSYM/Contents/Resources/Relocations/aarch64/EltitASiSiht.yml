@@ -2,8 +2,7 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Part 7/output/EltitASiSiht'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _reversePrint, symObjAddr: 0x0, symBinAddr: 0x100003D94, symSize: 0x70 }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _reversePrint, symObjAddr: 0x0, symBinAddr: 0x100003D94, symSize: 0x70 }
-  - { offsetInCU: 0x73, offset: 0x73, size: 0x8, addend: 0x0, symName: _processTestCase, symObjAddr: 0x70, symBinAddr: 0x100003E04, symSize: 0x68 }
-  - { offsetInCU: 0xB3, offset: 0xB3, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xD8, symBinAddr: 0x100003E6C, symSize: 0xDC }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _reverseString, symObjAddr: 0x0, symBinAddr: 0x100003D44, symSize: 0xA4 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _reverseString, symObjAddr: 0x0, symBinAddr: 0x100003D44, symSize: 0xA4 }
+  - { offsetInCU: 0x8F, offset: 0x8F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xA4, symBinAddr: 0x100003DE8, symSize: 0x15C }
 ...

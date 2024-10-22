@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-#define MAXN 100005
-
 int main() {
     int N, Q;
-    int views[MAXN];
-    int prefix[MAXN];
+    int views[100005];
+    int prefix[100005];
     
     scanf("%d", &N);
     
