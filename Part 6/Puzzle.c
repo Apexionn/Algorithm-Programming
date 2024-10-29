@@ -24,10 +24,10 @@ int main() {
         }
     }
 
-    for (int j = 0; j < N; j++) {
-        for (int i = 0; i < N - 1; i++) {
-            for (int k = i + 1; k < N; k++) {
-                if (matrix[i][j] == matrix[k][j]) {
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N - 1; j++) {
+            for (int k = j + 1; k < N; k++) {
+                if (matrix[j][i] == matrix[k][i]) {
                     printf("Nay\n"); 
                     return 0;
                 }

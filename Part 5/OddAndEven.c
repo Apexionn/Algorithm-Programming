@@ -5,17 +5,14 @@ int main(){
     int T, N, A;
     scanf("%d", &T);
 
-    for (int i = 0; i < T; i++)
-    {
+    for (int i = 0; i < T; i++){
         int EvenGroup = 0, OddGroup = 0;
         scanf("%d", &N);
 
-        for (int j = 0; j < N; j++)
-        {
+        for (int j = 0; j < N; j++){
             scanf("%d", &A);
 
-            if (A % 2 == 0 )
-            {
+            if (A % 2 == 0 ){
                 EvenGroup++;
             } else {
                 OddGroup++;

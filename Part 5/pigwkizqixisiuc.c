@@ -18,9 +18,7 @@ int main() {
             int letter_value = S[i] - 'a';
 
             letter_value += K;
-
             letter_value = letter_value % 26;
-
             char new_char = letter_value + 'a';
 
             printf("%c", new_char);

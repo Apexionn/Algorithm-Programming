@@ -12,7 +12,6 @@ int main() {
     }
     
     int Q;
-    
     scanf("%d", &Q);
     
     for (int t = 1; t <= Q; ++t) {

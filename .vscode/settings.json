@@ -60,6 +60,8 @@
     "stdio.h": "c",
     "__bit_reference": "c",
     "bitset": "c",
-    "__locale": "c"
+    "__locale": "c",
+    "HelloName.C": "cpp",
+    "unordered_map": "c"
   }
 }

@@ -15,9 +15,9 @@ int main(){
 
         int len = strlen(str);
 
-        printf("Case #%d : ",i+1);
+        printf("Case #%d : ", i + 1);
 
-        for (int j = len-1; j >= 0; j--){
+        for (int j = len - 1; j >= 0; j--){
             if (j == 0){
                 printf("%c\n", str[j]);
             }

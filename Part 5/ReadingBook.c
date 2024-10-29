@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-//Total = 100   Target = 10  Target = 90
-//              Front = n/2   Back = n-t /2
-//Total = 100   Target = 9  Target = 89
-//              Front = n-1 /2   Back = n-t+1 /2
-
 int checkMin(int total, int target){
     int front,back,min;
     if (total == target || target == 1){
