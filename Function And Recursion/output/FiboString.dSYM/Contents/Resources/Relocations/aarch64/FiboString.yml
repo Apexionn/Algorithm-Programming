@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Function And Recursion/output/FiboString'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _generateFiboString, symObjAddr: 0x0, symBinAddr: 0x100003C34, symSize: 0x1D4 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _generateFiboString, symObjAddr: 0x0, symBinAddr: 0x100003C34, symSize: 0x1D4 }
+  - { offsetInCU: 0xFB, offset: 0xFB, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x1D4, symBinAddr: 0x100003E08, symSize: 0x13C }
+...
