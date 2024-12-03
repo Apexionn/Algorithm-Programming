@@ -1,36 +1,45 @@
 #include <stdio.h>
 
+int findCoolFactor(int arr[], int n) {
+    int coolFactor = 0;
+    
+    // For each number in the array, check if it can be formed by summing two others
+    for (int i = 0; i < n; i++) {
+        int found = 0;
+        // Try all possible pairs
+        for (int j = 0; j < n && !found; j++) {
+            for (int k = j + 1; k < n && !found; k++) {
+                // Skip if we're using the current number
+                if (i == j || i == k) continue;
+                
+                // If we find a pair that sums to our target
+                if (arr[j] + arr[k] == arr[i]) {
+                    coolFactor++;
+                    found = 1;
+                }
+            }
+        }
+    }
+    
+    return coolFactor;
+}
+
 int main() {
-    int T; 
+    int T;
     scanf("%d", &T);
-
+    
     for (int t = 1; t <= T; t++) {
-        int N; 
+        int N;
         scanf("%d", &N);
-
+        
         int A[200];
-        int sumExists[401] = {0}; 
         for (int i = 0; i < N; i++) {
             scanf("%d", &A[i]);
         }
-
-        for (int i = 0; i < N; i++) {
-            for (int j = i + 1; j < N; j++) {
-                int sum = A[i] + A[j];
-                sumExists[sum] = 1; 
-            }
-        }
-
-        int coolFactor = 0;
-        for (int i = 0; i < N; i++) {
-            if (sumExists[A[i]]) {
-                coolFactor++;
-                sumExists[A[i]] = 0; 
-            }
-        }
-
-        printf("Case #%d: %d\n", t, coolFactor);
+        
+        int result = findCoolFactor(A, N);
+        printf("Case #%d: %d\n", t, result);
     }
-
+    
     return 0;
 }
