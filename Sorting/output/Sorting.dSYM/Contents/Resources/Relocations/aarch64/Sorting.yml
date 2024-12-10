@@ -2,7 +2,8 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Sorting/output/Sorting'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _compare, symObjAddr: 0x0, symBinAddr: 0x100003B94, symSize: 0x28 }
-  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _compare, symObjAddr: 0x0, symBinAddr: 0x100003B94, symSize: 0x28 }
-  - { offsetInCU: 0x7E, offset: 0x7E, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x28, symBinAddr: 0x100003BBC, symSize: 0x374 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _merge, symObjAddr: 0x0, symBinAddr: 0x1000038EC, symSize: 0x334 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _merge, symObjAddr: 0x0, symBinAddr: 0x1000038EC, symSize: 0x334 }
+  - { offsetInCU: 0x148, offset: 0x148, size: 0x8, addend: 0x0, symName: _mergeSort, symObjAddr: 0x334, symBinAddr: 0x100003C20, symSize: 0x98 }
+  - { offsetInCU: 0x1A4, offset: 0x1A4, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x3CC, symBinAddr: 0x100003CB8, symSize: 0x2A0 }
 ...

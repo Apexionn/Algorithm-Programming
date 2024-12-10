@@ -64,6 +64,9 @@
     "HelloName.C": "cpp",
     "unordered_map": "c",
     "string.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "typeinfo": "c",
+    "string": "c",
+    "string_view": "c"
   }
 }
