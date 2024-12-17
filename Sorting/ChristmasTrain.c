@@ -10,18 +10,18 @@ int bubbleSort(int arr[], int n, int x) {
         
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                // Swap elements
+                // Menukar Elemen
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
                 
-                // Increment total time by swap time
+                // Menambah total time berdasarkan waktu tukar 
                 totalTime += x;
                 swapped = 1;
             }
         }
         
-        // If no swapping occurred, array is already sorted
+        // Jika tidak ada yang ketukar, berarti array sudah tersusun / tersortir
         if (swapped == 0) {
             break;
         }

@@ -1,72 +1,67 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 
-typedef struct {
-    char shortWord[50];
-    char originalWord[50];
-} Dictionary;
+typedef struct Kamus kamus;
 
-void translateSentence(char *sentence, Dictionary *dict, int dictSize) {
-    char *token = strtok(sentence, " ");
-    while (token != NULL) {
-        int found = 0;
-        for (int i = 0; i < dictSize; i++) {
-            if (strcmp(token, dict[i].shortWord) == 0) {
-                printf("%s", dict[i].originalWord);
-                found = 1;
-                break;
+struct Kamus{
+    char singkat[64];
+    char panjang[128];
+};
+
+int main(){
+    int n,tc;
+
+    FILE *fp = fopen("testdata.in","r");
+    fscanf(fp,"%d\n",&n);
+    
+    kamus list[n];
+    for (int i = 0; i < n; i++){
+        fscanf(fp,"%[^#]#%[^\n]\n", list[i].singkat, list[i].panjang);
+    }
+
+    fscanf(fp,"%d\n",&tc);
+
+    for (int i = 0; i < tc; i++){
+        char str[128];
+        char *token;
+        char result[128][256];
+
+        fscanf(fp,"%[^\n]\n",str);
+
+        token = strtok(str, " ");
+
+        int a = 0;
+        while (token){   
+            int found = 0;
+
+            for (int j = 0; j < n; j++){
+                if (strcmp(token, list[j].singkat) == 0){
+                    strcpy(result[a], list[j].panjang);
+                    found = 1;
+                    break;
+                }
+            }
+
+            if (!found){
+                strcpy(result[a], token);
+            }
+            
+            a++;
+            token = strtok(NULL, " ");            
+        }
+
+        printf("Case #%d:\n", i+1);
+        for (int j = 0; j < a; j++){
+            printf("%s", result[j]);
+            if(j == a - 1){
+                printf("\n");
+            }
+            else{
+                printf(" ");
             }
         }
-        if (!found) {
-            printf("%s", token);
-        }
-        token = strtok(NULL, " ");
-        if (token != NULL) {
-            printf(" ");
-        }
     }
-    printf("\n");
-}
+    fclose(fp);
 
-int main() {
-    FILE *file = fopen("testdata.in", "r");
-    if (!file) {
-        printf("Error: Unable to open file.\n");
-        return 1;
-    }
-
-    int T, TC;
-    fscanf(file, "%d\n", &T);
-
-    Dictionary dict[T];
-    for (int i = 0; i < T; i++) {
-        char line[100];
-        fgets(line, 100, file);
-
-        char *shortWord = strtok(line, "#");
-        char *originalWord = strtok(NULL, "\n");
-
-        strcpy(dict[i].shortWord, shortWord);
-        strcpy(dict[i].originalWord, originalWord);
-    }
-
-    fscanf(file, "%d\n", &TC);
-
-    for (int i = 1; i <= TC; i++) {
-        char sentence[100];
-        fgets(sentence, 100, file);
-
-        // Remove newline character if present
-        size_t len = strlen(sentence);
-        if (sentence[len - 1] == '\n') {
-            sentence[len - 1] = '\0';
-        }
-
-        printf("Case #%d: ", i);
-        translateSentence(sentence, dict, T);
-    }
-
-    fclose(file);
     return 0;
 }

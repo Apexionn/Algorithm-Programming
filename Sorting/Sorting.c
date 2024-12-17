@@ -1,87 +1,108 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
-void merge(int arr[], int left, int mid, int right) {
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
+struct metadata {
+    long long int difference;
+    long long int num_a;
+    long long int num_b;
+};
 
-    int L[n1], R[n2];
+void merge(long long int arr[], const int left, const int mid, const int right) {
+    const int leftSize = mid - left + 1;
+    const int rightSize = right - mid;
+    long long int leftArr[leftSize];
+    long long int rightArr[rightSize];
 
-    for (int i = 0; i < n1; i++) {
-        L[i] = arr[left + i];
+    for (int i = 0; i < leftSize; i++) {
+        leftArr[i] = arr[left + i];
     }
-    for (int i = 0; i < n2; i++) {
-        R[i] = arr[mid + 1 + i];
-    }
 
-    int i = 0, j = 0, k = left;
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            i++;
+    for (int i = 0; i < rightSize; i++) {
+        rightArr[i] = arr[mid + 1 + i];
+    }
+    
+    int idx = left;
+    int leftIdx = 0;
+    int rightIdx = 0;
+    while (leftIdx < leftSize && rightIdx < rightSize) {
+        if (leftArr[leftIdx] <= rightArr[rightIdx]) {
+            arr[idx] = leftArr[leftIdx];
+            idx++;
+            leftIdx++;
         } else {
-            arr[k] = R[j];
-            j++;
+            arr[idx] = rightArr[rightIdx];
+            idx++;
+            rightIdx++;
         }
-        k++;
     }
-
-    while (i < n1) {
-        arr[k] = L[i];
-        i++;
-        k++;
+    while (leftIdx < leftSize) {
+        arr[idx] = leftArr[leftIdx];
+        idx++;
+        leftIdx++;
     }
-
-    while (j < n2) {
-        arr[k] = R[j];
-        j++;
-        k++;
+    while (rightIdx < rightSize) {
+        arr[idx] = rightArr[rightIdx];
+        idx++;
+        rightIdx++;
     }
 }
 
-void mergeSort(int arr[], int left, int right) {
-    if (left < right) {
-        int mid = left + (right - left) / 2;
-
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, left, mid, right);
+void divide(long long int arr[], const int left, const int right) {
+    if (left >= right) {
+        return;
     }
+    const int mid = (left + right) / 2;
+    divide(arr, left, mid);
+    divide(arr, mid + 1, right);
+    merge(arr, left, mid, right);
 }
 
 int main() {
-    int n;
-
-    scanf("%d", &n);
-
-    if (n < 2) {
-        printf("Jumlah angka harus minimal 2.\n");
-        return 1;
+    long long int size;
+    scanf("%lld", &size);
+    long long int arr[size];
+    for (int i = 0; i < size; i++) {
+        scanf("%lld", &arr[i]);
     }
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+    // bubble sort
+    divide(arr, 0, size - 1);
+    // construct as metadata group
+    const int size_list = size - 1;
+    struct metadata meta_list[size_list];
+    for (int i = 0; i < size_list; i++) {
+        struct metadata meta;
+        meta.difference = abs(arr[i] - arr[i + 1]);
+        meta.num_a = arr[i];
+        meta.num_b = arr[i + 1];
+        meta_list[i] = meta;
     }
-
-    mergeSort(arr, 0, n - 1);
-
-    int maxDiff = 0;
-    for (int i = 0; i < n - 1; i++) {
-        int diff = arr[i + 1] - arr[i];
-        if (diff > maxDiff) {
-            maxDiff = diff;
+    // find maximum difference
+    int maximum = 0;
+    for (int i = 0; i < size_list; i++) {
+        if (maximum < meta_list[i].difference) {
+            maximum = meta_list[i].difference;
         }
     }
-
-
-    for (int i = 0; i < n - 1; i++) {
-        if (arr[i + 1] - arr[i] == maxDiff) {
-            printf("%d %d ", arr[i], arr[i + 1]);
+    // count maximum difference
+    int count = 0;
+    for (int i = 0; i < size_list; i++) {
+        if (maximum == meta_list[i].difference) {
+            count++;
         }
     }
-    printf("\n");
-
+    // only displayed maximum difference
+    for (int i = 0; i < size_list; i++) {
+        if (maximum == meta_list[i].difference) {
+            printf("%lld", meta_list[i].num_a);
+            printf(" ");
+            printf("%lld", meta_list[i].num_b);
+            count--;
+            if (count) {
+                printf(" ");
+            } else {
+                printf("\n");
+            }
+        }
+    }
     return 0;
 }

@@ -5,16 +5,13 @@
 #define MAX_N 8
 #define INF 1000000
 
-// Possible knight moves
 int dx[] = {-2, -1, 1, 2, 2, 1, -1, -2};
 int dy[] = {1, 2, 2, 1, -1, -2, -2, -1};
 
-// Structure for coordinates
 typedef struct {
     int x, y;
 } Point;
 
-// Structure for queue
 typedef struct {
     Point p;
     int dist;

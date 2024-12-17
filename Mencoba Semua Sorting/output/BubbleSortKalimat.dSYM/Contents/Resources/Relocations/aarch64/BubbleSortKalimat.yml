@@ -1,0 +1,8 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Mencoba Semua Sorting/output/BubbleSortKalimat'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _BubbleSortStrings, symObjAddr: 0x0, symBinAddr: 0x100003A64, symSize: 0x188 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _BubbleSortStrings, symObjAddr: 0x0, symBinAddr: 0x100003A64, symSize: 0x188 }
+  - { offsetInCU: 0xC7, offset: 0xC7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x188, symBinAddr: 0x100003BEC, symSize: 0x154 }
+...
