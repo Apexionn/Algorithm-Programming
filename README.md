@@ -9,6 +9,11 @@ Welcome to the **Algorithm-Programming** repository! This project showcases a co
 4. **Selection**: Implement decision-making processes using `if`, `else`, and `switch` statements.
 5. **Repetition**: Practice looping structures like `for`, `while`, and `do-while`.
 6. **Array & Pointer**: Understand arrays and pointers, mastering memory management and data handling.
+7. **Function & Recursion**: Develop reusable code blocks with functions and explore recursive problem-solving techniques.
+8. **File**: Learn how to work with files to store and retrieve data efficiently.
+9. **Sorting**: Implement sorting algorithms to organize data systematically.
+10. **Searching:** Practice searching techniques to locate data within structures.
+11. **Binary Search**: Master the binary search algorithm for efficient data searching.
 
 ## 🛠 Languages:
 - **C**: All solutions and examples are implemented in C.
