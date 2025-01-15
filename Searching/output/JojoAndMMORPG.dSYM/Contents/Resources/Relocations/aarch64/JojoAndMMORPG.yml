@@ -2,6 +2,10 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Searching/output/JojoAndMMORPG'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003D8C, symSize: 0x1EC }
-  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003D8C, symSize: 0x1EC }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _merge, symObjAddr: 0x0, symBinAddr: 0x100003730, symSize: 0x2A8 }
+  - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _merge, symObjAddr: 0x0, symBinAddr: 0x100003730, symSize: 0x2A8 }
+  - { offsetInCU: 0xFD, offset: 0xFD, size: 0x8, addend: 0x0, symName: _mergeSort, symObjAddr: 0x2A8, symBinAddr: 0x1000039D8, symSize: 0x98 }
+  - { offsetInCU: 0x159, offset: 0x159, size: 0x8, addend: 0x0, symName: _calculateMaxDiff, symObjAddr: 0x340, symBinAddr: 0x100003A70, symSize: 0x1B4 }
+  - { offsetInCU: 0x21B, offset: 0x21B, size: 0x8, addend: 0x0, symName: _findMinMaxDiff, symObjAddr: 0x4F4, symBinAddr: 0x100003C24, symSize: 0x208 }
+  - { offsetInCU: 0x2F7, offset: 0x2F7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x6FC, symBinAddr: 0x100003E2C, symSize: 0x128 }
 ...

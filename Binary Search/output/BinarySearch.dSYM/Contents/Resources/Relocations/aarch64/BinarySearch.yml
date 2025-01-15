@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lintanganggowoyuono/Documents/BINUS/SEMESTER 1/Algorithm Programming/Binary Search/output/BinarySearch'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _sum_of_squares, symObjAddr: 0x0, symBinAddr: 0x100003D7C, symSize: 0x50 }
+  - { offsetInCU: 0x48, offset: 0x48, size: 0x8, addend: 0x0, symName: _sum_of_squares, symObjAddr: 0x0, symBinAddr: 0x100003D7C, symSize: 0x50 }
+  - { offsetInCU: 0x7E, offset: 0x7E, size: 0x8, addend: 0x0, symName: _find_smallest_n, symObjAddr: 0x50, symBinAddr: 0x100003DCC, symSize: 0xEC }
+  - { offsetInCU: 0xEC, offset: 0xEC, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x13C, symBinAddr: 0x100003EB8, symSize: 0xB8 }
+...

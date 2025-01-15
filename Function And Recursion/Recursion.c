@@ -1,38 +1,34 @@
 #include <stdio.h>
 
-int call_count = 0;
+long long int recursion(int A, int *count){
+    if (A != 0 && A % 3 == 0){
+        (*count)++;
+    }
 
-long long int function(int N){    
-    if (N == 0){
+    if (A == 0){
         return 1;
-    }
-    if (N == 1){
+    } else if (A == 1){
         return 2;
+    } else if (A % 5 == 0){
+        return A * 2;
+    } else {
+        return recursion(A - 1, count) + A + recursion(A - 2, count) + A - 2;
     }
-    if (N % 3 == 0){
-        call_count++;
-    }
-    if (N % 5 == 0){
-        return N * 2;
-    } 
-
-    return function(N - 1) + N + function(N - 2) + N - 2;
 }
 
 int main(){
     int T;
     scanf("%d", &T);
-
-    for (int i = 1; i <= T; i++){
+    
+    for (int i = 0; i < T; i++){
         int N;
         scanf("%d", &N);
-
-        call_count = 0;
-        int result = function(N);
-
-        printf("Case #%d: %d %d\n", i, result, call_count);
+        int call_count = 0;
+        int result = recursion(N, &call_count);
+        printf("Case #%d: %d %d\n", i + 1, result, call_count);
     }
     
+
 
     return 0;
 }
