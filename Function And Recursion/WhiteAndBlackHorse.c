@@ -1,36 +1,39 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
-const int dx[] = {-2, -1, 1, 2, 2, 1, -1, -2};
-const int dy[] = {1, 2, 2, 1, -1, -2, -2, -1};
+const int dx[] = {2, 2, -2, -2, 1, 1, -1, -1};
+const int dy[] = {1, -1, 1, -1, 2, -2, 2, -2};
 
-void convertPosition(char *pos, int *x, int *y) {
+void convertPosition(char* pos, int* x, int* y) {
     *x = pos[0] - 'A';
     *y = pos[1] - '1';
 }
 
-bool isValidPosition(int x, int y) {
-    return (x >= 0 && x < 8 && y >= 0 && y < 8);
+bool isValid(int x, int y) {
+    return x >= 0 && x < 8 && y >= 0 && y < 8;
 }
 
-bool canKnightsMeet(int x1, int y1, int x2, int y2, int n) {
-    if (n < 0) return false;
+bool canMeet(int x1, int y1, int x2, int y2, int moves, bool visited[8][8][8][8][11]) {
+    if (moves < 0) return false;
     if (x1 == x2 && y1 == y2) return true;
-    if (n == 0) return false;
+    if (visited[x1][y1][x2][y2][moves]) return false;
+    
+    visited[x1][y1][x2][y2][moves] = true;
     
     for (int i = 0; i < 8; i++) {
-        int newX1 = x1 + dx[i];
-        int newY1 = y1 + dy[i];
+        int new_x1 = x1 + dx[i];
+        int new_y1 = y1 + dy[i];
         
-        if (!isValidPosition(newX1, newY1)) continue;
+        if (!isValid(new_x1, new_y1)) continue;
         
         for (int j = 0; j < 8; j++) {
-            int newX2 = x2 + dx[j];
-            int newY2 = y2 + dy[j];
+            int new_x2 = x2 + dx[j];
+            int new_y2 = y2 + dy[j];
             
-            if (!isValidPosition(newX2, newY2)) continue;
+            if (!isValid(new_x2, new_y2)) continue;
             
-            if (canKnightsMeet(newX1, newY1, newX2, newY2, n - 1)) {
+            if (canMeet(new_x1, new_y1, new_x2, new_y2, moves - 1, visited)) {
                 return true;
             }
         }
@@ -53,7 +56,10 @@ int main() {
         convertPosition(pos1, &x1, &y1);
         convertPosition(pos2, &x2, &y2);
         
-        printf("Case #%d: %s\n", t, canKnightsMeet(x1, y1, x2, y2, N) ? "YES" : "NO");
+        bool visited[8][8][8][8][11] = {false};
+        
+        bool result = canMeet(x1, y1, x2, y2, N, visited);
+        printf("Case #%d: %s\n", t, result ? "YES" : "NO");
     }
     
     return 0;

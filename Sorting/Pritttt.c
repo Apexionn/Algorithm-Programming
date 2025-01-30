@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 void merge(int arr[], int left, int mid, int right){
     int nL = mid - left + 1;

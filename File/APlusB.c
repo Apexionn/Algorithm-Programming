@@ -1,22 +1,13 @@
 #include <stdio.h>
 
-int main() {
-    FILE *fin = fopen("testdata.in", "r");
-    if (!fin) {
-        printf("Error opening input file\n");
-        return 1;
-    }
+int main(){
+    FILE *file = fopen("testdata.in", "r");
 
     int a, b;
-    if (fscanf(fin, "%d %d", &a, &b) != 2) {
-        printf("Error reading input\n");
-        fclose(fin);
-        return 1;
-    }
+    fscanf(file, "%d %d", &a, &b);
 
-    fclose(fin);
+    fclose(file);
 
     printf("%d\n", a + b);
-
     return 0;
 }

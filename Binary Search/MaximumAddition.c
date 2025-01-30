@@ -1,45 +1,44 @@
 #include <stdio.h>
 
-void solveTestCase(long long testCaseNumber, long long n, long long m, long long arr[]) {
-    long long maxLength = -1;
-    long long left = 0, right = 0;
-    long long currentSum = 0;
+long long int findLongestSegment(int a, long long int b, long long int arr[]) {
+    long long int sum = 0, start = 0, longest = 0;
 
-    while (right < n) {
-        currentSum += arr[right];
-
-        while (currentSum > m && left <= right) {
-            currentSum -= arr[left];
-            left++;
+    for (int j = 0; j < a; j++) {
+        sum += arr[j];
+        while (sum > b) {
+            sum -= arr[start++];
         }
-
-        if (currentSum <= m) {
-            long long currentLength = right - left + 1;
-            if (currentLength > maxLength) {
-                maxLength = currentLength;
+        if (sum <= b) {
+            long long int current = j - start + 1;
+            if (current > longest) {
+                longest = current;
             }
         }
-
-        right++;
     }
 
-    printf("Case #%lld: %lld\n", testCaseNumber, maxLength);
+    return longest > 0 ? longest : -1;
 }
 
 int main() {
-    long long t;
-    scanf("%lld", &t);
+    long long int T;
+    scanf("%lld", &T);
 
-    for (long long testCase = 1; testCase <= t; testCase++) {
-        long long n, m;
-        scanf("%lld %lld", &n, &m);
+    for (int i = 0; i < T; i++) {
+        long long int a, b;
+        scanf("%lld %lld", &a, &b);
+        long long int arr[a];
 
-        long long arr[n];
-        for (long long i = 0; i < n; i++) {
-            scanf("%lld", &arr[i]);
+        for (int j = 0; j < a; j++) {
+            scanf("%lld", &arr[j]);
         }
 
-        solveTestCase(testCase, n, m, arr);
+        long long int result = findLongestSegment(a, b, arr);
+
+        if (result == -1) {
+            printf("Case #%d: -1\n", i + 1);
+        } else {
+            printf("Case #%d: %lld\n", i + 1, result);
+        }
     }
 
     return 0;

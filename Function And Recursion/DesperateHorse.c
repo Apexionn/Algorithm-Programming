@@ -39,18 +39,15 @@ bool isQueueEmpty() {
     return front == rear;
 }
 
-// Convert chess notation to array indices
 void convertNotation(char *pos, int *x, int *y) {
     *x = pos[0] - 'A';
     *y = pos[1] - '1';
 }
 
-// Check if position is valid on chess board
 bool isValid(int x, int y) {
     return x >= 0 && x < MAX_N && y >= 0 && y < MAX_N;
 }
 
-// Find minimum steps using BFS
 int findMinSteps(Point start, Point end) {
     bool visited[MAX_N][MAX_N] = {false};
     initQueue();
@@ -62,12 +59,10 @@ int findMinSteps(Point start, Point end) {
         QueueItem current = dequeue();
         Point pos = current.p;
         
-        // If we reached the destination
         if (pos.x == end.x && pos.y == end.y) {
             return current.dist;
         }
         
-        // Try all possible knight moves
         for (int i = 0; i < 8; i++) {
             int newX = pos.x + dx[i];
             int newY = pos.y + dy[i];
@@ -80,7 +75,7 @@ int findMinSteps(Point start, Point end) {
         }
     }
     
-    return INF; // Should never reach here given the problem constraints
+    return INF; 
 }
 
 int main() {
