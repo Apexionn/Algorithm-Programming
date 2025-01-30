@@ -1,38 +1,38 @@
 #include <stdio.h>
 
 void Merge(long long int arr[], const int left, const int mid, const int right) {
-    const int leftSize = mid - left + 1;
-    const int rightSize = right - mid;
-    long long int leftArr[leftSize], rightArr[rightSize];
-    for (int i = 0; i < leftSize; i++) {
-        leftArr[i] = arr[left + i];
+    const int nL = mid - left + 1;
+    const int nR = right - mid;
+    long long int ArrayL[nL], ArrayR[nR];
+    for (int i = 0; i < nL; i++) {
+        ArrayL[i] = arr[left + i];
     }
-    for (int i = 0; i < rightSize; i++) {
-        rightArr[i] = arr[mid + i + 1];
+    for (int i = 0; i < nR; i++) {
+        ArrayR[i] = arr[mid + i + 1];
     }
-    int idx = left;
-    int leftIdx = 0;
-    int rightIdx = 0;
-    while (leftIdx < leftSize && rightIdx < rightSize) {
-        if (leftArr[leftIdx] < rightArr[rightIdx]) {
-            arr[idx] = leftArr[leftIdx];
-            idx++;
-            leftIdx++;
+    int Index = left;
+    int IndexL = 0;
+    int IndexR = 0;
+    while (IndexL < nL && IndexR < nR) {
+        if (ArrayL[IndexL] < ArrayR[IndexR]) {
+            arr[Index] = ArrayL[IndexL];
+            Index++;
+            IndexL++;
         } else {
-            arr[idx] = rightArr[rightIdx];
-            idx++;
-            rightIdx++;
+            arr[Index] = ArrayR[IndexR];
+            Index++;
+            IndexR++;
         }
     }
-    while (leftIdx < leftSize) {
-        arr[idx] = leftArr[leftIdx];
-        idx++;
-        leftIdx++;
+    while (IndexL < nL) {
+        arr[Index] = ArrayL[IndexL];
+        Index++;
+        IndexL++;
     }
-    while (rightIdx < rightSize) {
-        arr[idx] = rightArr[rightIdx];
-        idx++;
-        rightIdx++;
+    while (IndexR < nR) {
+        arr[Index] = ArrayR[IndexR];
+        Index++;
+        IndexR++;
     }
 }
 
